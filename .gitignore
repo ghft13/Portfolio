@@ -1,0 +1,30 @@
+# Node modules directory
+node_modules/
+
+# Build output
+build/
+
+# Environment variables
+.env
+
+# Log files
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE and editor-specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# NPM package lock file (if you prefer not to include it)
+package-lock.json
+
+# Optional: local development database files
+*.sqlite
+*.db

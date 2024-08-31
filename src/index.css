@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family:one;
+  src: url('../public/Fonts/one.ttf');
+}
+
+
+@font-face {
+  font-family:two;
+  src: url('../public/Fonts/two.ttf');
+}
+
+
+@font-face {
+  font-family:three;
+  src: url('../public/Fonts/three.ttf');
+}
+
+
+@font-face {
+  font-family:four;
+  src: url('../public/Fonts/four.ttf');
+}
+
+
+@font-face {
+  font-family:five;
+  src: url('../public/Fonts/five.ttf');
+}
+
+
+@font-face {
+  font-family: 'six';
+  src: url('../public/Fonts/six.ttf') format('truetype');  
+  font-style: normal;
+  font-weight: 100;
+}
+
+
+.navbar{
+  font-family: icomoon;
+}
+
+.text{
+  font-family: neueMontreal1;
+}
+
+.gradient-background {
+  background: linear-gradient(400deg, deepskyblue, darkviolet, blue);
+  background-size: 180% 180%;
+}
+
+.moving-gradient {
+  background: linear-gradient(
+    200deg,
+    rgba(25, 99, 123, 0.64),
+    rgb(162, 74, 200),
+    rgba(0, 0, 255, 0.705)
+  );
+  background-size: 200%;
+  border-radius: 50%;
+  border: 10px solid blac;
+  transition: linear 0.2s;
+  filter: blur(5px);
+  box-shadow: 5px 5px 15px
+    linear-gradient(
+      200deg,
+      rgba(25, 99, 123, 0.64),
+      rgb(162, 74, 200),
+      rgba(0, 0, 255, 0.705)
+    );
+}
+
+.header-title:hover {
+  transition: background-color 0.5s linear;
+  background-color: rgb(255, 210, 7);
+}
+
+
+a {
+  text-decoration: none;
+}
+
+
+.Skills .title{
+  font-family: three;
+}
+
+
+.connect h1{
+  font-family:FoundersGrotestk1;
+}
