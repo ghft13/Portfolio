@@ -38,15 +38,13 @@ function App() {
 
   return (
     <>
-      <div className="relative h-full w-full bg-black">
-        {/* Moving Circle */}
+      <div className="relative h-full w-full bg-black overflow-x-hidden">
         <motion.div
           className="h-10 w-10 bg-white rounded-full fixed top-0 left-0 z-10"
           ref={movingdiv}
           animate={controls}
         ></motion.div>
 
-        {/* Locomotive Scroll Container */}
         <div ref={scrollRef} data-scroll-container>
           <Navbar controls={controls} movingdiv={movingdiv}/>
           <Skills />

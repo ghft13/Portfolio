@@ -9,77 +9,60 @@ gsap.registerPlugin(ScrollTrigger);
 const Skills = () => {
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".pinele",
-          //      markers: true,
-          pin: true,
-          start: "top top",
-          end: "1500% top",
-          scrub: 2,
-        },
-      });
+      let mm = gsap.matchMedia();
 
-      tl.to(
-        ".react",
-        {
-          y: -900,
-          opacity: 1,
-        },
-        "a"
-      );
-      tl.to(
-        ".nodejs",
-        {
-          y: -500,
-          opacity: 1,
-        },
-        "a"
-      );
-      tl.to(
-        ".express",
-        {
-          y: -500,
-          opacity: 1,
-        },
-        "a"
-      );
+      // For large screens
+      mm.add("(min-width:768px)", () => {
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".pinele",
+            //  markers: true, // Disable markers
+            pin: true,
+            start: "top top",
+            end: "1600% top", // Reduced scroll distance
+            scrub: 1,
+          },
+        });
 
-      tl.to(
-        ".connect",
-        {
-          y: -1200,
-          scrub: 1,
-        },
-        "b"
-      );
+        tl.to(".react", { y: -900, opacity: 1 }, "start");
+        tl.to(".nodejs", { y: -800, opacity: 1 }, "start");
+        tl.to(".express", { y: -800, opacity: 1 }, "start");
 
-      tl.to(
-        ".workskills ",
-        {
-          y: -1000,
-          scrub: 1,
-        },
-        "c"
-      );
-
-      let t2 = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".workskills ",
-          start: "600% top",
-          end: "800% bottom",
-          scrub: true,
-          //    markers: true,
-        },
-      });
-
-      t2.to(".firstskill", {
-        color: " #000000",
-        opacity: 0,
+        // Additional animations (without overlap)
+        tl.to(".connect", { y: -1300, opacity: 1 }, "mid");
+        tl.to(".workskills", { y: -1400, opacity: 1 }, "end");
       });
     });
 
-    return () => ctx.revert(); // <- cleanup!
+    return () => ctx.revert(); // Cleanup
+  }, []);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      let mm = gsap.matchMedia();
+
+      mm.add("(min-width:320px) and (max-width:767px)", () => {
+        let t2 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".pinele",
+            pin: true,
+            //markers: true,
+            start: "top 50%",
+            end: "1500% top", // Reduced scroll distance
+            scrub: 1,
+          },
+        });
+
+        t2.to(".react", { y: -900, opacity: 1 }, "start");
+        t2.to(".nodejs", { y: -800, opacity: 1 }, "start");
+        t2.to(".express", { y: -800, opacity: 1 }, "start");
+
+        t2.to(".connect", { y: -1100, opacity: 1,scrub:5 }, "mid");
+        t2.to(".workskills", { y: -1200, opacity: 1 }, "end");
+      });
+    });
+
+    return () => ctx.revert(); // Cleanup
   }, []);
 
   return (
@@ -89,34 +72,34 @@ const Skills = () => {
           Skills
         </h1>
         <div className="w-full relative">
-          <div className="absolute -top-40 left-20 w-[15vw]">
+          <div className="absolute left-5 w-20 top-40   xl:-top-40 xl:left-[1200px] xl:w-[15vw] lg:left-20 lg:w-[15vw] md:left-20 md:w-[15vw] sm:left-[20px] sm:w-[15vw] ">
             <img
               src="nodejs.png"
-              className="w-full object-contain nodejs opacity-0"
+              className="w-full object-contain nodejs"
               alt="Node.js"
             />
           </div>
-          <div className="absolute -top-40 right-40 w-[15vw]">
+          <div className="absolute w-20  top-40 left-80 xl:-top-40  xl:w-[15vw] lg:top-40 lg:left-[1000px] lg:w-[15vw] md:left-[650px] md:w-[15vw] sm:left-[500px] sm:w-[15vw] ">
             <img
               src="express.png"
-              className="w-full object-contain express opacity-0"
+              className="w-full object-contain express "
               alt="Express.js"
             />
           </div>
-          <div className="absolute top-52 left-1/2 w-[15vw]">
+          <div className="absolute w-20 top-80 left-44 xl:top-52 xl:left-1/2  xl:w-[15vw] lg:top-40 lg:left-[500px] lg:w-[15vw] md:left-[350px] md:w-[15vw] sm:left-[280px] sm:w-[15vw]  ">
             <img
               src="react.png"
-              className="w-full object-contain react opacity-0"
+              className="w-full object-contain react "
               alt="React.js"
             />
           </div>
 
-          <div className="w-full  absolute top-[300px] connect px-10 py-10 rounded-tl-3xl rounded-tr-3xl flex z-20">
+          <div className="w-full  absolute top-[200px] md:top-[300px] lg:top-[300px] xl:top-[300px] connect px-10 py-10 rounded-tl-3xl rounded-tr-3xl flex z-20">
             <motion.h1
               initial={{ x: "0" }}
               animate={{ x: "-100%" }}
               transition={{ ease: "linear", repeat: Infinity, duration: 5 }}
-              className=" text-gray-500 uppercase text-center text-[18vw] text-nowrap tracking-tight leading-none border-t-2 border-b-2 pr-5"
+              className=" text-gray-500 uppercase text-center text-[16vw] xl:text-[18vw] text-nowrap tracking-tight leading-none border-t-2 border-b-2 pr-5"
             >
               Let's get Connected
             </motion.h1>
@@ -124,19 +107,23 @@ const Skills = () => {
               initial={{ x: "0" }}
               animate={{ x: "-100%" }}
               transition={{ ease: "linear", repeat: Infinity, duration: 5 }}
-              className="text-gray-500 uppercase text-center text-[18vw] text-nowrap tracking-tight leading-none border-t-2 border-b-2 pr-5"
+              className="text-gray-500 uppercase text-center text-[16vw] xl:text-[18vw] text-nowrap tracking-tight leading-none border-t-2 border-b-2 pr-5"
             >
               Let's get Connected
             </motion.h1>
           </div>
 
-          <div className="w-full absolute top-[190px] px-10 py-20 text-white workskills z-20">
-            <div className="border-t-[1px] border-white py-10 flex justify-between items-center firstskill">
-              <h2 className="text-xl" style={{ fontFamily: "icomoon" }}>
+          <div className="w-full absolute xl:top-[300px] md:top-[300px] top-[100px] px-2 xl:px-10 py-20 text-white workskills z-20">
+            {/* Skill 01 */}
+            <div className="border-t-[1px] border-white py-10 flex flex-col sm:flex-col md:flex-row md:justify-between xl:flex-row justify-center xl:justify-between items-center gap-4 firstskill ">
+              <h2
+                className="text-lg xl:text-xl"
+                style={{ fontFamily: "icomoon" }}
+              >
                 [01]
               </h2>
               <h1
-                className="text-3xl tracking-wide"
+                className="text-xl xl:text-2xl tracking-wide"
                 style={{ fontFamily: "neueMontreal1" }}
               >
                 <Typewriter
@@ -150,7 +137,7 @@ const Skills = () => {
                 />
               </h1>
               <h4
-                className="w-2/6 text-2xl leading-[25px]"
+                className="text-center w-full xl:w-2/6 lg:w-2/6 md:w-2/6  text-xl xl:text-2xl xl:leading-[25px]"
                 style={{ fontFamily: "two" }}
               >
                 I love to create and to craft responsive and visually appealing
@@ -158,12 +145,17 @@ const Skills = () => {
                 JavaScript for dynamic interactions.
               </h4>
             </div>
-            <div className="border-t-[1px] border-white py-10 flex justify-between items-center first">
-              <h2 className="text-xl" style={{ fontFamily: "icomoon" }}>
+
+            {/* Skill 02 */}
+            <div className="border-t-[1px] border-white py-10 flex flex-col sm:flex-col md:flex-row md:justify-between xl:flex-row justify-center xl:justify-between items-center gap-4 first">
+              <h2
+                className="text-lg xl:text-xl"
+                style={{ fontFamily: "icomoon" }}
+              >
                 [02]
               </h2>
               <h1
-                className="text-3xl tracking-wide"
+                className="text-lg xl:text-2xl tracking-wide"
                 style={{ fontFamily: "neueMontreal1" }}
               >
                 <Typewriter
@@ -177,22 +169,24 @@ const Skills = () => {
                 />
               </h1>
               <h4
-                className="w-2/6 text-2xl leading-[25px]"
+                className="text-center w-full xl:w-2/6  lg:w-2/6  md:w-2/6 text-lg xl:text-2xl xl:leading-[25px]"
                 style={{ fontFamily: "two" }}
               >
                 I have a strong command of React, which help me to build
                 interactive and efficient user interfaces. With GSAP, I am able
                 to create smooth animations. Also Good understanding of git and
                 github which help for collaborative project management and also
-                to manage my own projects
+                to manage my own projects.
               </h4>
             </div>
-            <div className="border-t-[1px] border-white py-10 flex justify-between items-center first">
+
+            {/* Skill 03 */}
+            <div className="border-t-[1px] border-white py-10 flex flex-col sm:flex-col md:flex-row md:justify-between xl:flex-row justify-center xl:justify-between items-center gap-4 first">
               <h2 className="text-xl" style={{ fontFamily: "icomoon" }}>
                 [03]
               </h2>
               <h1
-                className="text-3xl tracking-wide "
+                className="text-lg tracking-wide"
                 style={{ fontFamily: "neueMontreal1" }}
               >
                 <Typewriter
@@ -206,7 +200,7 @@ const Skills = () => {
                 />
               </h1>
               <h4
-                className="w-2/6 text-2xl leading-[25px]"
+                className="text-center w-full xl:w-2/6  lg:w-2/6 md:w-2/6  text-lg xl:text-2xl  xl:leading-[25px]"
                 style={{ fontFamily: "two" }}
               >
                 I have a good understanding of backend processes, including how
