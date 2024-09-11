@@ -26,17 +26,17 @@ const Navbar = ({controls}) => {
             <h1 className="text-lg">Jayraj Araj</h1>
           </motion.div>
           <div className="flex gap-9 md:gap-20 lg:gap-20 xl:gap-20 justify-center items-center z-10">
-            <motion.a
+            <motion.h2
               onMouseEnter={onenter}
               onMouseLeave={onleave}
-              href="/Project"
               className="text-lg"
             >
               Projects
-            </motion.a>
+            </motion.h2>
             <motion.a
               onMouseEnter={onenter}
               onMouseLeave={onleave}
+              href="https://github.com/ghft13"
               className="text-lg"
             >
               <FaGithub />
@@ -45,6 +45,7 @@ const Navbar = ({controls}) => {
               className="text-lg"
               onMouseEnter={onenter}
               onMouseLeave={onleave}
+              href="https://www.linkedin.com/in/jayraj-araj-2a31a8226"
             >
               <FaLinkedin />
             </motion.a>

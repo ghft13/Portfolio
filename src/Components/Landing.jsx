@@ -9,7 +9,6 @@ const Landing = () => {
     <>
       <div className="h-screen w-screen bg-green-700 ">
         <Navbar />
-     
       </div>
     </>
   );
