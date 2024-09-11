@@ -14,25 +14,6 @@ const Navbar = ({controls}) => {
   function onleave() {
     controls.start({ scale: 1, backgroundColor: "white" });
   }
-  gsap.registerPlugin(ScrollTrigger);
-
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".main",
-       //   markers: true,
-          scrub: 2,
-          start: "10% top",
-          end: "40% top",
-        },
-      });
-
-    
-    });
-
-    return () => ctx.revert();
-  },[]);
 
   return (
 
