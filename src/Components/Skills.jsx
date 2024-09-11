@@ -113,7 +113,7 @@ const Skills = () => {
             </motion.h1>
           </div>
 
-          <div className="w-full absolute xl:top-[300px] md:top-[300px] top-[100px] px-2 xl:px-10 py-20 text-white workskills z-20">
+          <div className="w-full absolute xl:top-[300px] md:top-[300px] top-[150px] px-2 xl:px-10 py-20 text-white workskills z-20">
             {/* Skill 01 */}
             <div className="border-t-[1px] border-white py-10 flex flex-col sm:flex-col md:flex-row md:justify-between xl:flex-row justify-center xl:justify-between items-center gap-4 firstskill ">
               <h2
