@@ -79,14 +79,14 @@ const Skills = () => {
               alt="Node.js"
             />
           </div>
-          <div className="absolute w-20  top-40 left-80 xl:-top-40  xl:w-[15vw] lg:top-40 lg:left-[1000px] lg:w-[15vw] md:left-[650px] md:w-[15vw] sm:left-[500px] sm:w-[15vw] ">
+          <div className="absolute w-20  top-40 left-52 xl:-top-40  xl:w-[15vw] lg:top-40 lg:left-[1000px] lg:w-[15vw] md:left-[650px] md:w-[15vw] sm:left-[500px] sm:w-[15vw] ">
             <img
               src="express.png"
               className="w-full object-contain express "
               alt="Express.js"
             />
           </div>
-          <div className="absolute w-20 top-80 left-44 xl:top-52 xl:left-1/2  xl:w-[15vw] lg:top-40 lg:left-[500px] lg:w-[15vw] md:left-[350px] md:w-[15vw] sm:left-[280px] sm:w-[15vw]  ">
+          <div className="absolute w-20 top-80 left-36 xl:top-52 xl:left-1/2  xl:w-[15vw] lg:top-40 lg:left-[500px] lg:w-[15vw] md:left-[350px] md:w-[15vw] sm:left-[280px] sm:w-[15vw]  ">
             <img
               src="react.png"
               className="w-full object-contain react "
@@ -94,7 +94,7 @@ const Skills = () => {
             />
           </div>
 
-          <div className="w-full  absolute top-[200px] md:top-[300px] lg:top-[300px] xl:top-[300px] connect px-10 py-10 rounded-tl-3xl rounded-tr-3xl flex z-20">
+          <div className="w-full  absolute top-[240px] md:top-[300px] lg:top-[300px] xl:top-[300px] connect px-10 py-10 rounded-tl-3xl rounded-tr-3xl flex z-20">
             <motion.h1
               initial={{ x: "0" }}
               animate={{ x: "-100%" }}
