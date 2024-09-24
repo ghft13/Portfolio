@@ -4,6 +4,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { useLayoutEffect } from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
+import '../App.css'
 gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
@@ -71,22 +72,22 @@ const Skills = () => {
         <h1 className="text-[20vw] text-center tracking-normal title text-gray-800">
           Skills
         </h1>
-        <div className="w-full relative">
-          <div className="absolute left-5 w-20 top-40   xl:-top-40 xl:left-[1200px] xl:w-[15vw] lg:left-20 lg:w-[15vw] md:left-20 md:w-[15vw] sm:left-[20px] sm:w-[15vw] ">
+        <div className="w-full relative images-box ">
+          <div className="absolute left-5 w-20 top-40   xl:-top-40 xl:left-[200px] xl:w-[15vw] lg:left-20 lg:w-[15vw] md:left-20 md:w-[15vw] sm:left-[20px] sm:w-[15vw] ">
             <img
               src="nodejs.png"
               className="w-full object-contain nodejs"
               alt="Node.js"
             />
           </div>
-          <div className="absolute w-20  top-40 left-52 xl:-top-40  xl:w-[15vw] lg:top-40 lg:left-[1000px] lg:w-[15vw] md:left-[650px] md:w-[15vw] sm:left-[500px] sm:w-[15vw] ">
+          <div className="absolute w-20  top-40 left-[350px]  xl:-top-40  xl:w-[15vw] lg:top-40 lg:left-[1000px] lg:w-[15vw] md:left-[650px] md:w-[15vw] sm:left-[500px] sm:w-[15vw] ">
             <img
               src="express.png"
               className="w-full object-contain express "
               alt="Express.js"
             />
           </div>
-          <div className="absolute w-20 top-80 left-36 xl:top-52 xl:left-1/2  xl:w-[15vw] lg:top-40 lg:left-[500px] lg:w-[15vw] md:left-[350px] md:w-[15vw] sm:left-[280px] sm:w-[15vw]  ">
+          <div className="absolute w-20 top-80 left-48 xl:top-52 xl:left-1/2  xl:w-[15vw] lg:top-40 lg:left-[500px] lg:w-[15vw] md:left-[350px] md:w-[15vw] sm:left-[280px] sm:w-[15vw]  ">
             <img
               src="react.png"
               className="w-full object-contain react "

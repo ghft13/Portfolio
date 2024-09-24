@@ -20,7 +20,7 @@ function Workskills() {
   }, [ishovered]);
 
   return (
-    <div className="w-full relative text-white xl:flex xl:justify-between  px-20 py-20 header z-50">
+    <div className="w-full relative text-white xl:flex xl:justify-between  px-20 py-20 header">
       <LottieAnimation />
       <div className="absolute top-60  md:top-60 xl:top-64 left-0 xl:left-20 xl:w-[40%] md:w-[100%] lg:w-[40%] flex flex-col items-center justify-center  gap-20 w-full">
         <h1 className="text-5xl  xl:text-7xl text-gray-600" style={{ fontFamily: "two" }}>
@@ -28,7 +28,7 @@ function Workskills() {
         </h1>
 
         <motion.div
-          className=" md:h-20 h-12  text-center xl:h-20 overflow-y-hidden relative "
+          className="md:h-12 h-12  lg:h-12  text-center  xl:h-20 overflow-y-hidden relative bottom-20  z-50 "
           onHoverStart={() => setishovered(true)}
           onHoverEnd={() => setishovered(false)}
         >

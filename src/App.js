@@ -2,13 +2,15 @@ import "./App.css";
 import "./index.css";
 import Navbar from "./Components/Navbar";
 import Skills from "./Components/Skills";
-
 import Workskills from "./Components/Workskills";
 import { useRef, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import LocomotiveScroll from "locomotive-scroll";
-
+import { createBrowserRouter,RouterProvider } from "react-router-dom";
+import Projects from "./Components/Projects";
 function App() {
+
+ 
   const movingdiv = useRef(null);
   const controls = useAnimation(); 
   const scrollRef = useRef(null);
