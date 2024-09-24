@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "./Navbar";
-import { useRef } from "react";
-import MovingCircle from "./MovingCircle";
-import ImageCircle from "./ImageCircle";
+
 
 const Landing = () => {
   return (
