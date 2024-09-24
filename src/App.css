@@ -1,7 +1,11 @@
-html,body{
- overflow: hidden;
- width: 100%;
-}
+html, body {
+    overflow: hidden; /* To prevent scrollbars on the body */
+  }
+  
+  #root {
+    overflow-y: auto; /* Allow scrolling inside the root container */
+  }
+  
 
 @media (min-width:390px) and (max-width:420px) {
   .express{
