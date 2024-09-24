@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import LottieAnimation from "./LottieAnimation";
-import { easeIn, motion } from "framer-motion";
+import {  motion } from "framer-motion";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Workskills() {
-  const [ishovered, setishovered] = useState(false);
+  // const [ishovered, setishovered] = useState(false);
 
-  useEffect(() => {
-    if (ishovered) {
-      gsap.to(".top-h1", { y: -120, duration: 0.2,ease:easeIn });
-      gsap.to(".bottom-h1", { y: -120, duration: 0.2,ease:easeIn });
-    } else {
-      gsap.to(".top-h1", { y: 0, duration: 0.2,ease:easeIn } );
-      gsap.to(".bottom-h1", { y: 0, duration: 0.2,ease:easeIn });
-    }
-  }, [ishovered]);
+  // useEffect(() => {
+  //   if (ishovered) {
+  //     gsap.to(".top-h1", { y: -120, duration: 0.2,ease:easeIn });
+  //     gsap.to(".bottom-h1", { y: -120, duration: 0.2,ease:easeIn });
+  //   } else {
+  //     gsap.to(".top-h1", { y: 0, duration: 0.2,ease:easeIn } );
+  //     gsap.to(".bottom-h1", { y: 0, duration: 0.2,ease:easeIn });
+  //   }
+  // }, [ishovered]);
 
   return (
     <div className="w-full relative text-white xl:flex xl:justify-between  px-20 py-20 header">
@@ -29,8 +29,8 @@ function Workskills() {
 
         <motion.div
           className="md:h-12 h-12  lg:h-12  text-center  xl:h-20 overflow-y-hidden relative bottom-20  z-50 "
-          onHoverStart={() => setishovered(true)}
-          onHoverEnd={() => setishovered(false)}
+          // onHoverStart={() => setishovered(true)}
+          // onHoverEnd={() => setishovered(false)}
         >
           <motion.h1
             className=" text-4xl xl:text-6xl py-2 "
