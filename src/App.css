@@ -1,3 +1,8 @@
+html,body{
+ overflow: hidden;
+ width: 100%;
+}
+
 @media (min-width:390px) and (max-width:420px) {
   .express{
     position: relative;
